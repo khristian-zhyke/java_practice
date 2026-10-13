@@ -18,17 +18,21 @@ public class simplecalc {
         int choice = scanner.nextInt();
         
         switch (choice) {
-            case 1:
-                System.out.println("Result: " + (num1 + num2));
+                case 1:
+                System.out.printf("Result: %.2f%n", (num1 + num2));
                 break;
                 case 2:
-                System.out.println("Result: " + (num1 - num2));
+                System.out.printf("Result: %.2f%n", (num1 - num2));
                 break;
                 case 3:
-                System.out.println("Result: " + (num1 * num2));
+                System.out.printf("Result: %.2f%n", (num1 * num2));
                 break;
                 case 4:
-                System.out.println("Result: " + (num1 / num2));
+                if (num2 == 0) {
+                    System.out.println("Error: Division by zero is not allowed.");
+                } else {
+                    System.out.printf("Result: %.2f%n",  (num1 / num2));
+                }
                 break;
                 default:
                 System.out.println("Invalid choice. Please select a valid operation.");
