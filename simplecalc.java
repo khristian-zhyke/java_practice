@@ -8,6 +8,8 @@ public class simplecalc {
         System.out.println("| Welcome to Simple Calculator |");
         System.out.println("|______________________________|");
         System.out.println("");
+        boolean con = true;
+        do {
         System.out.print("Enter the first number: ");
         double num1 = scanner.nextDouble();
         System.out.print("Enter the second number: ");
@@ -37,7 +39,23 @@ public class simplecalc {
                 default:
                 System.out.println("Invalid choice. Please select a valid operation.");
         }
-        scanner.close();
+        System.out.println("Do you want to perform another calculation? (yes/no): ");
+        String continueCalc = scanner.next();
+        if (continueCalc.equalsIgnoreCase("Yes")){
+            con = true;
+        }else if (continueCalc.equalsIgnoreCase("No")) {
+            System.out.println("Thank you for using Simple Calculator. Goodbye!");
+            con = false;
+            break;
+        }else {
+            System.out.println("Invalid input. Exiting the calculator.");
+            con = false;
+            break;
+        }
+    }
+    
+    while (con);
+        scanner.close();  
     }
     
 }
